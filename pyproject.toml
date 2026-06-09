@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lore-kernel-mcp"
+version = "0.1.0"
+description = "Lightweight MCP server for reading lore.kernel.org Linux kernel mailing list threads"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "soolaugust" }]
+keywords = ["mcp", "lore", "kernel", "linux", "mailing-list"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "requests>=2.28.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/soolaugust/lore-kernel-mcp"
+Repository = "https://github.com/soolaugust/lore-kernel-mcp"
+Issues = "https://github.com/soolaugust/lore-kernel-mcp/issues"
+
+[project.scripts]
+lore-kernel-mcp = "lore_kernel_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lore_kernel_mcp"]
